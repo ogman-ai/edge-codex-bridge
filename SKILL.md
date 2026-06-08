@@ -32,6 +32,7 @@ python .\scripts\client.py info
 python .\scripts\client.py user-tabs
 python .\scripts\client.py selected-tab
 python .\scripts\client.py create-tab
+python .\scripts\client.py claim-user-tab --tab-id 123
 ```
 
 Browser operation commands:
@@ -83,6 +84,14 @@ $tab = python .\scripts\client.py create-tab | ConvertFrom-Json
 python .\scripts\client.py attach --tab-id $tab.id
 python .\scripts\client.py cdp --tab-id $tab.id --method Page.navigate --params "{\"url\":\"https://example.com\"}"
 python .\scripts\client.py cdp --tab-id $tab.id --method Runtime.evaluate --params "{\"expression\":\"document.title\",\"returnByValue\":true}"
+```
+
+Claim an existing tab before attaching:
+
+```powershell
+python .\scripts\client.py user-tabs
+python .\scripts\client.py claim-user-tab --tab-id 123
+python .\scripts\client.py attach --tab-id 123
 ```
 
 Send low-level RPC:

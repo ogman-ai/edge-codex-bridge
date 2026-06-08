@@ -61,6 +61,15 @@ python .\scripts\client.py title --tab-id $tab.id
 python .\scripts\client.py text --tab-id $tab.id
 ```
 
+Claim and inspect an existing browser tab:
+
+```powershell
+python .\scripts\client.py user-tabs
+python .\scripts\client.py claim-user-tab --tab-id 123
+python .\scripts\client.py attach --tab-id 123
+python .\scripts\client.py title --tab-id 123
+```
+
 Send a raw CDP command:
 
 ```powershell

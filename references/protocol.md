@@ -82,6 +82,7 @@ Notification:
 - `selector-count --tab-id <id> <selector>`: Counts matching elements.
 - `wait-selector --tab-id <id> <selector>`: Waits for a selector.
 - `selected-tab`: Returns the first tab from `getUserTabs`, usually the most recent or focused tab returned by the extension. It is not guaranteed to be the current automation tab.
+- `claim-user-tab --tab-id <id>`: Calls `claimUserTab` so an existing user tab becomes part of the current bridge session.
 - `name-session <name>`: Calls extension `nameSession`, usually changing the Codex tab group name.
 - `viewport --tab-id <id> --width <n> --height <n>`: Wraps `Emulation.setDeviceMetricsOverride`.
 - `viewport --tab-id <id> --reset`: Wraps `Emulation.clearDeviceMetricsOverride`.

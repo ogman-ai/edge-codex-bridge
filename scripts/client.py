@@ -486,6 +486,9 @@ def main():
     attach_parser = sub.add_parser("attach")
     attach_parser.add_argument("--tab-id", type=int, required=True)
 
+    claim_user_tab_parser = sub.add_parser("claim-user-tab")
+    claim_user_tab_parser.add_argument("--tab-id", type=int, required=True)
+
     cdp_parser = sub.add_parser("cdp")
     cdp_parser.add_argument("--tab-id", type=int, required=True)
     cdp_parser.add_argument("--method", required=True)
@@ -695,6 +698,9 @@ def main():
     elif args.command == "attach":
         params = {**session_params(args), "tabId": args.tab_id}
         print_json(rpc("attach", params))
+    elif args.command == "claim-user-tab":
+        params = {**session_params(args), "tabId": args.tab_id}
+        print_json(rpc("claimUserTab", params))
     elif args.command == "cdp":
         print_json(
             cdp_request(
