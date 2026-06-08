@@ -1,0 +1,3 @@
+scripts/native_host_manifest.json
+__pycache__/
+*.pyc

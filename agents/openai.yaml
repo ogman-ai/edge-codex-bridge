@@ -1,0 +1,8 @@
+interface:
+  display_name: "Edge Codex Bridge"
+  short_description: "Operate a local Edge Codex extension through a Native Messaging bridge."
+  brand_color: "#2563EB"
+  default_prompt: "Use the edge-codex-bridge skill to inspect or operate the local Edge browser extension bridge."
+
+policy:
+  allow_implicit_invocation: true
