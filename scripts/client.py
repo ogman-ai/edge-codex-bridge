@@ -42,7 +42,18 @@ def rpc(method, params=None, timeout=10):
     except urllib.error.HTTPError as exc:
         payload = json.loads(exc.read().decode("utf-8"))
     if not payload.get("ok"):
-        raise RuntimeError(payload.get("error", "request failed"))
+        message = payload.get("error", "request failed")
+        if "is not part of browser session" in message:
+            tab_id = (params or {}).get("tabId")
+            if tab_id is None:
+                tab_id = ((params or {}).get("target") or {}).get("tabId")
+            if tab_id is not None:
+                message += (
+                    "\nRun these commands first:\n"
+                    f"python .\\scripts\\client.py claim-user-tab --tab-id {tab_id}\n"
+                    f"python .\\scripts\\client.py attach --tab-id {tab_id}"
+                )
+        raise RuntimeError(message)
     return payload.get("result")
 
 

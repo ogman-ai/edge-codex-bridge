@@ -108,4 +108,4 @@ Notification:
 - `Native host has exited`: check whether `host.cmd` can find `python`.
 - `already exists`: a native host with the same name is already registered. Do not use `-Force` unless you intentionally want to overwrite it.
 - `Debugger unattached`: run `attach` for the target tab first.
-- `Tab ... is not part of browser session`: create the tab with `createTab`, or claim an existing tab with `claimUserTab`.
+- `Tab ... is not part of browser session`: create the tab with `createTab`, or run `claim-user-tab --tab-id <id>` and then `attach --tab-id <id>`.
