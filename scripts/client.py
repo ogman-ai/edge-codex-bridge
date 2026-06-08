@@ -271,6 +271,7 @@ def selector_rect_expression(selector):
         + json.dumps(selector)
         + ");"
         "if (!el) return null;"
+        "el.scrollIntoView({block: 'center', inline: 'center'});"
         "const rect = el.getBoundingClientRect();"
         "return {"
         "x: rect.x, y: rect.y, width: rect.width, height: rect.height,"

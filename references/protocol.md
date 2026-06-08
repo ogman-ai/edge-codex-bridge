@@ -75,7 +75,7 @@ Notification:
 - `wait --tab-id <id> --selector <selector>`: Waits for a selector.
 - `wait --tab-id <id> --url-contains <text>`: Waits for the URL to contain text.
 - `wait --tab-id <id> --title-contains <text>`: Waits for the title to contain text.
-- `selector-click --tab-id <id> <selector>`: Reads the element rectangle and clicks its center.
+- `selector-click --tab-id <id> <selector>`: Scrolls the element into view, reads its rectangle, and clicks its center.
 - `selector-fill --tab-id <id> <selector> <text>`: Sets an input value and dispatches `input` and `change` events.
 - `selector-text --tab-id <id> <selector>`: Reads the first matching element's text.
 - `selector-attr --tab-id <id> <selector> <name>`: Reads an attribute from the first matching element.
